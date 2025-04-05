@@ -14,7 +14,7 @@ If you discover a security vulnerability in this project, we appreciate your eff
 
 1. **Do not create a public issue** on GitHub or any other public platform to report security vulnerabilities. This is to prevent the information from being accessible to malicious users before a fix is released.
 
-2. **Contact us directly** via email at [anthoniotheruiner@gmail.com](mailto:anthoniotheruiner@gmail.com). Provide as much information as possible, including:
+2. **Contact us directly** via email at [portfolio@luceast.de](mailto:portfolio@luceast.de). Provide as much information as possible, including:
    - A detailed description of the vulnerability.
    - Steps to reproduce the vulnerability.
    - Potential impact and any proof of concept (POC) code if available.

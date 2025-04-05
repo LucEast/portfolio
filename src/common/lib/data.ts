@@ -1,15 +1,7 @@
 import React from 'react';
 
-import campwithusImg from '@/../public/images/camp-with-us.png';
-import carcatalogImg from '@/../public/images/car-catalog.png';
-import filedriveImg from '@/../public/images/file-drive.png';
-import projectmanagementImg from '@/../public/images/project-management.png';
-import reactfoodImg from '@/../public/images/react-food.png';
-import surgeImg from '@/../public/images/surge.png';
 import portfolioImg from '@/../public/images/portfolio.png';
-import auditMasterImg from '@/../public/images/audit-master.png';
 import rkeasyImg from '@/../public/images/rkeasy.png';
-import accountingImg from '@/../public/images/accounting.jpg';
 import { BookIcon, BriefcaseBusinessIcon } from 'lucide-react';
 
 export const links = [
@@ -75,11 +67,7 @@ export const experiencesData = [
 ] as const;
 
 export const images = {
-  campwithusImg,
-  carcatalogImg,
-  filedriveImg,
-  projectmanagementImg,
-  reactfoodImg,
+  rkeasyImg
 };
 
 export const projectsData = [
