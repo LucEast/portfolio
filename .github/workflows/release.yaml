@@ -27,7 +27,7 @@ jobs:
         with:
           semantic_version: 20
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
   docker:
     needs: release
@@ -48,7 +48,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GH_PAT }}
+          password: ${{ secrets.GH_TOKEN }}
 
       - name: Build and push
         uses: docker/build-push-action@v5
