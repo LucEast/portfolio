@@ -8,6 +8,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    environment:
+      name: Portfolio
 
     steps:
       - name: Checkout code
