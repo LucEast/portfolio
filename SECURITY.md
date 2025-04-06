@@ -35,6 +35,6 @@ To ensure the security of your deployment, we recommend the following best pract
 
 ## Contact
 
-If you have any questions or concerns about our security policy, please reach out at [anthoniotheruiner@gmail.com](mailto:anthoniotheruiner@gmail.com).
+If you have any questions or concerns about our security policy, please reach out at [info@luceast.de](mailto:info@luceast.de).
 
 Thank you for helping us keep our project safe and secure!
