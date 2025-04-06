@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/LucEast/portfolio/compare/v1.0.1...v1.0.2) (2025-04-06)
+
+
+### Bug Fixes
+
+* test ([ac55409](https://github.com/LucEast/portfolio/commit/ac55409ae864aeef95ae22a3a4c1f8e8cbdb4f2a))
+* test ([0677907](https://github.com/LucEast/portfolio/commit/0677907570944f5189737d7b8a686e594b586eb4))
+
 ## [1.0.1](https://github.com/LucEast/portfolio/compare/v1.0.0...v1.0.1) (2025-04-06)
 
 
