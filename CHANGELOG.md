@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/LucEast/portfolio/compare/v1.0.4...v1.0.5) (2025-04-06)
+
+
+### Bug Fixes
+
+* Pipeline fix ([b47d486](https://github.com/LucEast/portfolio/commit/b47d486e8cc6e3c0e21eeca8ddbbd16d1fa403a6))
+
 ## [1.0.4](https://github.com/LucEast/portfolio/compare/v1.0.3...v1.0.4) (2025-04-06)
 
 
