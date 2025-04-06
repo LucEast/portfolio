@@ -41,7 +41,7 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-    docker:
+  docker:
     needs: release
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
@@ -72,6 +72,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: 
-            ghcr.io/${{ env.REPO_LOWER }}:v${{ env.VERSION }}
+          tags: ghcr.io/${{ env.REPO_LOWER }}:v${{ env.VERSION }}
             ghcr.io/${{ env.REPO_LOWER }}:latest
