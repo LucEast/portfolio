@@ -46,10 +46,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Get release version from package.json
+      - name: Get version from Git tag
         id: version
-        run: |
-          echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
+        run: echo "VERSION=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
 
       - name: Convert GitHub repo name to lowercase
         id: lower
