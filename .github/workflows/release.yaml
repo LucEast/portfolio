@@ -37,8 +37,9 @@ jobs:
       - name: Get version from package.json
         id: get_version
         run: |
-          echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
-          echo "::set-output name=version::$(jq -r .version package.json)"
+          VERSION=$(jq -r .version package.json)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
 
   docker:
     needs: release
