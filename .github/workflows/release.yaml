@@ -34,12 +34,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Get version from package.json
-        id: get_version
-        run: |
-          VERSION=$(jq -r .version package.json)
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+      - name: Get version from Git tag
+        run: echo "VERSION=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
 
   docker:
     needs: release
