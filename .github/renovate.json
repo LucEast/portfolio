@@ -1,7 +1,6 @@
 {
     "extends": ["config:recommended"],
     "labels": ["dependencies"],
-    "schedule": ["after 9am and before 5pm on weekdays"],
     "timezone": "Europe/Berlin",
     "automerge": false,
     "packageRules": [
