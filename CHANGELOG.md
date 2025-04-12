@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/LucEast/portfolio/compare/v1.0.5...v1.0.6) (2025-04-12)
+
+
+### Bug Fixes
+
+* Updated tag font color for darkmode ([f8d70ae](https://github.com/LucEast/portfolio/commit/f8d70ae79302970c174b433884cd653bff3b0c74))
+
 ## [1.0.5](https://github.com/LucEast/portfolio/compare/v1.0.4...v1.0.5) (2025-04-06)
 
 
