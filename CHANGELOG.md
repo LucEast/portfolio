@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/LucEast/portfolio/compare/v1.0.6...v1.0.7) (2025-04-12)
+
+
+### Bug Fixes
+
+* Change for renovate config ([5eb4b31](https://github.com/LucEast/portfolio/commit/5eb4b31b01092f258df69b929325a1f61fc146b6))
+
 ## [1.0.6](https://github.com/LucEast/portfolio/compare/v1.0.5...v1.0.6) (2025-04-12)
 
 
