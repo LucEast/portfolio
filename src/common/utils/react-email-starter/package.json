@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "@react-email/components": "0.0.17",
-    "react-email": "2.1.6",
-    "react": "^18.2.0"
+    "react-email": "4.0.7",
+    "react": "^19.0.0"
   },
   "devDependencies": {
-    "@types/react": "18.3.20",
-    "@types/react-dom": "18.3.6"
+    "@types/react": "19.1.2",
+    "@types/react-dom": "19.1.2"
   }
 }
