@@ -1,3 +1,15 @@
+## [1.0.8](https://github.com/LucEast/portfolio/compare/v1.0.7...v1.0.8) (2025-04-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @react-email/components to v0.0.36 ([c631392](https://github.com/LucEast/portfolio/commit/c6313921e831f744c4c847537a889958a15fd249))
+* **deps:** update dependency class-variance-authority to v0.7.1 ([d110547](https://github.com/LucEast/portfolio/commit/d110547f12898400db34f480954f19d33488fcd4))
+* **deps:** update dependency react-email to v2.1.6 ([9b53744](https://github.com/LucEast/portfolio/commit/9b5374442b7c851948399f68b9fb27f244f76ab0))
+* **deps:** update nextjs monorepo to v14.2.28 ([212efdb](https://github.com/LucEast/portfolio/commit/212efdbeb1591d07dc7dc5a3f8aee84ca2d754fc))
+* **deps:** update radix-ui-primitives monorepo ([282f67d](https://github.com/LucEast/portfolio/commit/282f67d85a1e87c85ed141929ac15bffdefaa283))
+* **deps:** Updated react-email to 2.1.6 ([d4a2bed](https://github.com/LucEast/portfolio/commit/d4a2bed8a240aef4fd6d393619c67a9239a83ae6))
+
 ## [1.0.7](https://github.com/LucEast/portfolio/compare/v1.0.6...v1.0.7) (2025-04-12)
 
 
