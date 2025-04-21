@@ -1,3 +1,26 @@
+## [1.0.9](https://github.com/LucEast/portfolio/compare/v1.0.8...v1.0.9) (2025-04-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @react-email/tailwind to v1 ([4cac2d0](https://github.com/LucEast/portfolio/commit/4cac2d0827838307c9ca67e9fafa31d16dd3055e))
+* **deps:** update dependency framer-motion to v11.18.2 ([e0ec2a3](https://github.com/LucEast/portfolio/commit/e0ec2a3dddf585812a4540a29d5bd20f4b795a73))
+* **deps:** update dependency framer-motion to v12 ([7abb852](https://github.com/LucEast/portfolio/commit/7abb8520cd45da7a3a0df20c0dc57226e4e4be9d))
+* **deps:** update dependency lucide-react to ^0.502.0 ([58f1300](https://github.com/LucEast/portfolio/commit/58f130075eefaf36aff0e6638bf5b57346278515))
+* **deps:** update dependency next-cloudinary to v6.16.0 ([b62d30f](https://github.com/LucEast/portfolio/commit/b62d30f61835d09c2b8c30554962bcd835a0832b))
+* **deps:** update dependency next-themes to ^0.4.0 ([6bd2881](https://github.com/LucEast/portfolio/commit/6bd288141b39e68fc3b8659656e5c7e3d92ce5a2))
+* **deps:** update dependency react-email to v4 ([e7726ca](https://github.com/LucEast/portfolio/commit/e7726ca99b9c72f26c86b504092abf90d5773270))
+* **deps:** update dependency react-hot-toast to v2.5.2 ([ee9b7f5](https://github.com/LucEast/portfolio/commit/ee9b7f5b218d38606dfb092b4c9bb603a94cd9a2))
+* **deps:** update dependency react-icons to v5.5.0 ([fa22ca3](https://github.com/LucEast/portfolio/commit/fa22ca377d941819f267ca87ee956c30cdacf53a))
+* **deps:** update dependency react-intersection-observer to v9.16.0 ([8b997c9](https://github.com/LucEast/portfolio/commit/8b997c9d3928bad8fecd576f860ee357a815279d))
+* **deps:** update dependency resend to v3.5.0 ([eafbd20](https://github.com/LucEast/portfolio/commit/eafbd20e5c45a70134a8832f7c8ea2854dc8e42d))
+* **deps:** update dependency resend to v4 ([448114a](https://github.com/LucEast/portfolio/commit/448114ac151889e7f7e261d7d6a8520dce3e4610))
+* **deps:** update dependency tailwind-merge to v2.6.0 ([bc3ac5e](https://github.com/LucEast/portfolio/commit/bc3ac5ed7ea325fd8f7e8ef2ba1028a7dc01d364))
+* **deps:** update dependency tailwind-merge to v3 ([b28e988](https://github.com/LucEast/portfolio/commit/b28e9884c8ddfcaaa0fbe0202b9e708067e1081a))
+* **deps:** update nextjs monorepo to v15 ([e86d516](https://github.com/LucEast/portfolio/commit/e86d5160c49893d869023d7374ff3c7324096db6))
+* **deps:** update react monorepo to v19 ([4fef2f2](https://github.com/LucEast/portfolio/commit/4fef2f2d6c4feea46465e471ffd84d7ca7e503f5))
+* **deps:** updated package-lock.json ([b1398d0](https://github.com/LucEast/portfolio/commit/b1398d0d8f578efc53957b93205315ccd52b77fc))
+
 ## [1.0.8](https://github.com/LucEast/portfolio/compare/v1.0.7...v1.0.8) (2025-04-21)
 
 
