@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/LucEast/portfolio/compare/v1.0.9...v1.0.10) (2025-04-29)
+
+
+### Bug Fixes
+
+* Rollback to TailwindCSS v3 & Updated RKEasy logo ([c3ef2df](https://github.com/LucEast/portfolio/commit/c3ef2df0d6ec5ad340c4e98d98d2f270031283d7))
+
 ## [1.0.9](https://github.com/LucEast/portfolio/compare/v1.0.8...v1.0.9) (2025-04-21)
 
 
