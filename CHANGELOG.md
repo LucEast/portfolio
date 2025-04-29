@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/LucEast/portfolio/compare/v1.0.10...v1.0.11) (2025-04-29)
+
+
+### Bug Fixes
+
+* added next-themes ([0aa273d](https://github.com/LucEast/portfolio/commit/0aa273d7d3dbd09e976816e2689581e93a149ff5))
+
 ## [1.0.10](https://github.com/LucEast/portfolio/compare/v1.0.9...v1.0.10) (2025-04-29)
 
 
