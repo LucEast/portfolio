@@ -110,7 +110,7 @@ export const projectsData = [
       'TypeScript',
       'Next.js',
       'Framer Motion',
-      'Cloudinary',
+      // 'Cloudinary',
       'React Email',
       'Tailwind',
     ],
