@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/LucEast/portfolio/compare/v1.0.11...v1.0.12) (2025-04-29)
+
+
+### Bug Fixes
+
+* small bugfixes ([f97359a](https://github.com/LucEast/portfolio/commit/f97359a651fd2acc9d8496f6f9dcf7a99069fc76))
+
 ## [1.0.11](https://github.com/LucEast/portfolio/compare/v1.0.10...v1.0.11) (2025-04-29)
 
 
