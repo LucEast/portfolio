@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/LucEast/portfolio/compare/v1.0.12...v1.1.0) (2025-08-23)
+
+
+### Features
+
+* Added  to projects ([9a90f2b](https://github.com/LucEast/portfolio/commit/9a90f2bc80de76c8bb836e0dda4568cc59a3bba7))
+
 ## [1.0.12](https://github.com/LucEast/portfolio/compare/v1.0.11...v1.0.12) (2025-04-29)
 
 
