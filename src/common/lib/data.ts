@@ -2,6 +2,7 @@ import React from 'react';
 
 import portfolioImg from '@/../public/images/portfolio.png';
 import rkeasyImg from '@/../public/images/rkeasy.png';
+import currentviewImg from '@/../public/images/currentview.png';
 import { BookIcon, BriefcaseBusinessIcon } from 'lucide-react';
 
 export const links = [
@@ -116,6 +117,16 @@ export const projectsData = [
     ],
     imageUrl: portfolioImg,
     link: 'https://github.com/LucEast/portfolio',
+  },
+  {
+    title: 'Current View',
+    description: `A Obsidian plugin that automtically sets the view mode (Reading, Live Preview, Source) for notes based on folder rules, file patterns, or frontmatter.`,
+    tags: [
+      'TypeScript',
+      'Obsidian',
+    ],
+    imageUrl: currentviewImg,
+    link: 'https://github.com/LucEast/obsidian-current-view',
   },
 
   // {

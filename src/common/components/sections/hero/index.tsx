@@ -29,7 +29,7 @@ export default function Hero() {
           <div className="absolute top-1/4 left-1/3 w-[400px] h-[400px] rounded-full bg-blue-500 opacity-30 blur-[100px] animate-blob animation-delay-4000" />
         </div>
 
-        <div className="container flex flex-col items-center justify-center text-center tracking-wide text-black dark:text-white">
+        <div className="container z-10 flex flex-col items-center justify-center text-center tracking-wide text-black dark:text-white">
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold"
             initial={{ y: -50, opacity: 0 }}
