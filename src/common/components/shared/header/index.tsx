@@ -6,14 +6,21 @@ import { useActiveSectionContext } from "@/common/stores/active-section";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { ModeToggle } from "@/common/theme/mode-toggler";
+import { LanguageSwitcher } from "@/common/components/shared/language-switcher";
 
 export default function Header() {
   const t = useTranslations("nav");
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     smoothScrollTo({ e, id });
@@ -21,6 +28,10 @@ export default function Header() {
     setTimeOfLastClick(Date.now());
     setMobileMenuOpen(false);
   };
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <header className="relative z-[99]">
@@ -95,13 +106,13 @@ export default function Header() {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              className="fixed inset-0 top-16 bg-white/98 dark:bg-darkBg/98 backdrop-blur-md"
+              className="fixed inset-0 top-16 bg-white/98 dark:bg-darkBg/98 backdrop-blur-md z-[100]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <nav className="flex h-full flex-col items-center justify-center pb-16">
+              <nav className="flex h-full flex-col items-center justify-center pb-16 gap-12">
                 <ul className="flex flex-col gap-6 text-center">
                   {links.map((link, index) => (
                     <motion.li
@@ -128,6 +139,17 @@ export default function Header() {
                     </motion.li>
                   ))}
                 </ul>
+                
+                {/* Settings section in mobile menu */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="flex gap-4 items-center"
+                >
+                  <ModeToggle />
+                  <LanguageSwitcher />
+                </motion.div>
               </nav>
             </motion.div>
           )}

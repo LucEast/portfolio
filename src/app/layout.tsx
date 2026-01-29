@@ -38,10 +38,12 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
-            <div className="fixed right-2 top-2 z-[99] flex gap-2 sm:bottom-6 sm:left-6 sm:right-auto sm:top-auto sm:flex-col">
+            {/* Desktop only: Bottom left corner */}
+            <div className="hidden sm:flex fixed bottom-6 left-6 z-[99] flex-col gap-2">
               <ModeToggle />
               <LanguageSwitcher />
             </div>
+            {/* Mobile: Switchers are in hamburger menu */}
             <Toaster position="top-right" />
           </ThemeProvider>
         </div>
