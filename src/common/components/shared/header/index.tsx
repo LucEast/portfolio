@@ -57,6 +57,18 @@ export default function Header() {
                     damping: 20
                   }}
                 >
+                  {link.id === activeSection && (
+                    <motion.span
+                      className="absolute inset-0 z-0 rounded-full bg-gray-800 dark:bg-gray-200"
+                      layoutId="activeSection"
+                      transition={{
+                        type: "spring",
+                        bounce: 0.2,
+                        duration: 0.6,
+                      }}
+                    />
+                  )}
+                  
                   <Link
                     className={`relative z-10 flex items-center justify-center px-4 py-2 rounded-full uppercase transition-colors whitespace-nowrap ${
                       link.id === activeSection
@@ -68,18 +80,6 @@ export default function Header() {
                   >
                     {t(link.id as any)}
                   </Link>
-
-                  {link.id === activeSection && (
-                    <motion.span
-                      className="absolute inset-0 rounded-full bg-gray-800 dark:bg-gray-200"
-                      layoutId="activeSection"
-                      transition={{
-                        type: "spring",
-                        bounce: 0.2,
-                        duration: 0.6,
-                      }}
-                    ></motion.span>
-                  )}
                 </motion.li>
               ))}
             </ul>
