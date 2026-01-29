@@ -31,6 +31,16 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  // Use polling for file changes in containers
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+      }
+    }
+    return config
+  },
 }
 
 export default withNextIntl(nextConfig);
