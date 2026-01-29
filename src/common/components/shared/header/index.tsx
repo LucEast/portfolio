@@ -38,13 +38,14 @@ export default function Header() {
       {/* Desktop Navigation */}
       <div className="hidden sm:block">
         <motion.div
-          className="fixed left-1/2 top-6 h-[3.25rem] w-auto min-w-[36rem] max-w-[48rem] rounded-full border border-lightPrimary dark:border-darkPrimary border-opacity-40 bg-white/80 dark:bg-darkBg/80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]"
+          className="fixed left-1/2 top-6 h-[3.25rem] rounded-full border border-lightPrimary dark:border-darkPrimary border-opacity-40 bg-white/80 dark:bg-darkBg/80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]"
           initial={{ y: -100, x: "-50%", opacity: 0 }}
           animate={{ y: 0, x: "-50%", opacity: 1 }}
+          style={{ width: "fit-content", minWidth: "36rem", maxWidth: "50rem" }}
         ></motion.div>
 
-        <nav className="fixed left-1/2 top-[1.7rem] flex h-[initial] -translate-x-1/2 py-0">
-          <ul className="flex items-center justify-center gap-2 text-[0.85rem] font-medium transition-colors md:gap-3 lg:gap-4">
+        <nav className="fixed left-1/2 top-[1.7rem] -translate-x-1/2">
+          <ul className="flex items-center justify-center gap-1 text-[0.85rem] font-medium">
             {links.map((link) => (
               <motion.li
                 className="relative flex items-center justify-center text-black dark:text-white"
@@ -53,7 +54,7 @@ export default function Header() {
                 animate={{ y: 0, opacity: 1 }}
               >
                 <Link
-                  className="flex items-center justify-center px-3 py-3 uppercase transition whitespace-nowrap"
+                  className="flex items-center justify-center px-4 py-3 uppercase transition whitespace-nowrap hover:text-gray-600 dark:hover:text-gray-300"
                   href={link.id}
                   onClick={(e) => handleLinkClick(e, link.id)}
                 >

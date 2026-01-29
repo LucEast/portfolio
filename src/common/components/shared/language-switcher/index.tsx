@@ -31,14 +31,14 @@ export function LanguageSwitcher() {
   };
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon" className="border-none">
           <Languages className="h-[1.2rem] w-[1.2rem]" />
           <span className="sr-only">Switch language</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" className="z-[200]">
         {locales.map((locale) => (
           <DropdownMenuItem
             key={locale}
