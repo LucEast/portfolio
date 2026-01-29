@@ -3,7 +3,7 @@
 import { links } from "@/common/lib/data";
 import { smoothScrollTo } from "@/common/lib/utils";
 import { useActiveSectionContext } from "@/common/stores/active-section";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
@@ -43,46 +43,48 @@ export default function Header() {
           animate={{ y: 0, x: "-50%", opacity: 1 }}
         >
           <nav className="h-full flex items-center">
-            <ul className="flex items-center justify-center gap-0.5 text-[0.85rem] font-medium">
-              {links.map((link, index) => (
-                <motion.li
-                  className="relative"
-                  key={link.id}
-                  initial={{ y: -100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    delay: index * 0.08,
-                    type: "spring",
-                    stiffness: 260,
-                    damping: 20
-                  }}
-                >
-                  {link.id === activeSection && (
-                    <motion.span
-                      className="absolute inset-0 z-0 rounded-full bg-gray-800 dark:bg-gray-200"
-                      layoutId="activeSection"
-                      transition={{
-                        type: "spring",
-                        bounce: 0.2,
-                        duration: 0.6,
-                      }}
-                    />
-                  )}
-                  
-                  <Link
-                    className={`relative z-10 flex items-center justify-center px-4 py-2 rounded-full uppercase transition-colors whitespace-nowrap ${
-                      link.id === activeSection
-                        ? "text-white dark:text-gray-900"
-                        : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                    }`}
-                    href={link.id}
-                    onClick={(e) => handleLinkClick(e, link.id)}
+            <LayoutGroup>
+              <ul className="flex items-center justify-center gap-0.5 text-[0.85rem] font-medium">
+                {links.map((link, index) => (
+                  <motion.li
+                    className="relative"
+                    key={link.id}
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
+                      delay: index * 0.08,
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 20
+                    }}
                   >
-                    {t(link.id as any)}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
+                    {link.id === activeSection && (
+                      <motion.span
+                        className="absolute inset-0 z-0 rounded-full bg-gray-800 dark:bg-gray-200"
+                        layoutId="activeSection"
+                        transition={{
+                          type: "spring",
+                          bounce: 0.2,
+                          duration: 0.6,
+                        }}
+                      />
+                    )}
+                    
+                    <Link
+                      className={`relative z-10 flex items-center justify-center px-4 py-2 rounded-full uppercase transition-colors whitespace-nowrap ${
+                        link.id === activeSection
+                          ? "text-white dark:text-gray-900"
+                          : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                      }`}
+                      href={link.id}
+                      onClick={(e) => handleLinkClick(e, link.id)}
+                    >
+                      {t(link.id as any)}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </LayoutGroup>
           </nav>
         </motion.div>
       </div>
