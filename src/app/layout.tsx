@@ -3,16 +3,14 @@ import { Montserrat as FontMontserrat } from 'next/font/google';
 import { cn } from '@/common/lib/utils';
 import '@/common/styles/globals.css';
 import { Toaster } from 'react-hot-toast';
-import ActiveSectionContextProvider from '@/common/stores/active-section';
 import { ThemeProvider } from '@/common/theme/theme-provider';
-import Header from '@/common/components/shared/header';
-import Footer from '@/common/components/shared/footer';
 import { ModeToggle } from '@/common/theme/mode-toggler';
+import { LanguageSwitcher } from '@/common/components/shared/language-switcher';
 
 export const metadata: Metadata = {
   title: 'Lucas Ostmann | Portfolio',
   description:
-    'Built using TypeScript, Next.js 14, Framaer Motion and Tailwind CSS.',
+    'Built using TypeScript, Next.js 15, Framer Motion and Tailwind CSS.',
 };
 
 const fontMontserrat = FontMontserrat({
@@ -25,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html className="scroll-smooth" suppressHydrationWarning>
       <body
         className={cn(
           'relative flex items-center justify-center',
@@ -33,22 +31,19 @@ export default function RootLayout({
         )}
       >
         <div className="flex min-h-screen w-full flex-col">
-          <ActiveSectionContextProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <Header />
-              {children}
-              <Footer />
-              <div className="fixed left-1 right-auto top-1 z-[99] sm:bottom-6 sm:left-6 sm:top-auto">
-                <ModeToggle />
-              </div>
-              <Toaster position="top-right" />
-            </ThemeProvider>
-          </ActiveSectionContextProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <div className="fixed right-2 top-2 z-[99] flex gap-2 sm:bottom-6 sm:left-6 sm:right-auto sm:top-auto sm:flex-col">
+              <ModeToggle />
+              <LanguageSwitcher />
+            </div>
+            <Toaster position="top-right" />
+          </ThemeProvider>
         </div>
       </body>
     </html>

@@ -1,9 +1,13 @@
+"use client";
+
 import React from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { useFormStatus } from "react-dom";
 import { Button } from "@/common/components/ui";
+import { useTranslations } from "next-intl";
 
 export default function SubmitBtn() {
+  const t = useTranslations("contact.form");
   const { pending } = useFormStatus();
 
   return (
@@ -16,7 +20,7 @@ export default function SubmitBtn() {
         <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
       ) : (
         <>
-          Submit{" "}
+          {t('submit')}{" "}
           <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1" />{" "}
         </>
       )}

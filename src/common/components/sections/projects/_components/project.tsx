@@ -1,12 +1,17 @@
 'use client';
 
 import { useRef } from 'react';
-import { projectsData } from '@/common/lib/data';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = {
+  title: string;
+  description: string;
+  tags: readonly string[];
+  imageUrl: StaticImageData;
+  link: string;
+};
 
 export default function Project({
   title,
@@ -38,13 +43,13 @@ export default function Project({
             "relative max-w-[52rem] overflow-hidden rounded-xl border border-zinc-200 bg-lightPrimary/10 shadow-md hover:shadow-lg transition duration-300 hover:scale-[1.01] dark:border-white/10 dark:bg-darkPrimary/10 dark:hover:bg-white/10 sm:h-[20rem]"
           }
         >
-          <div className="flex h-full flex-col px-5 pb-7 pt-4 sm:max-w-[50%] sm:pl-10 sm:pr-2 sm:pt-10 sm:group-even:ml-[18rem]">
-            <h3 className="text-2xl font-semibold uppercase"> {title}</h3>
-            <p className="mt-2 leading-relaxed">{description}</p>
-            <ul className="mt-4 flex flex-wrap gap-2 sm:mt-auto">
+          <div className="flex h-full flex-col px-4 sm:px-5 pb-6 sm:pb-7 pt-4 sm:max-w-[50%] sm:pl-10 sm:pr-2 sm:pt-10 sm:group-even:ml-[18rem]">
+            <h3 className="text-xl sm:text-2xl font-semibold uppercase"> {title}</h3>
+            <p className="mt-2 text-sm sm:text-base leading-relaxed">{description}</p>
+            <ul className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 sm:mt-auto">
               {tags.map((tag, index) => (
                 <li
-                  className="rounded-full bg-lightPrimary px-3 py-1 text-[0.7rem] uppercase tracking-wider dark:bg-darkPrimary dark:text-white"
+                  className="rounded-full bg-lightPrimary px-2.5 sm:px-3 py-0.5 sm:py-1 text-[0.65rem] sm:text-[0.7rem] uppercase tracking-wider dark:bg-darkPrimary dark:text-white"
                   key={index}
                 >
                   {tag}

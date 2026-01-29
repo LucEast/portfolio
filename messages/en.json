@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Lucas Ostmann",
+    "title": "Kubernetes Administrator",
+    "description": "I specialize in Kubernetes, DevOps, and cloud infrastructure. Currently working at OWL-IT in Ostwestfalen-Lippe, Germany."
+  },
+  "about": {
+    "title": "About me",
+    "content": "After completing my training as an IT specialist for system integration, I worked as a system administrator at a municipal data center. Since 2023, I've been working at OWL-IT as a Kubernetes Administrator and Deputy Team Lead (Linux). I focus on planning, building, and operating Kubernetes clusters, as well as developing an internal cloud management console. My expertise includes DevSecOps, Infrastructure as Code, security, and automation."
+  },
+  "projects": {
+    "title": "My projects"
+  },
+  "experience": {
+    "title": "My experience",
+    "owlit": {
+      "title": "OWL-IT",
+      "location": "Ostwestfalen-Lippe, Germany",
+      "description": "Kubernetes Administrator & Deputy Team Lead (Linux). Planning, building, and operating Kubernetes clusters, as well as developing an internal cloud management console. Focus on DevSecOps, IaC, security, and automation.",
+      "date": "Aug 2023 – Present"
+    },
+    "krz": {
+      "title": "Municipal Data Center",
+      "location": "Ostwestfalen-Lippe, Germany",
+      "description": "System Administrator. Operation and maintenance of Linux systems, building and maintaining networks, and mobile device management.",
+      "date": "Jul 2020 – Aug 2023"
+    },
+    "study": {
+      "title": "Part-time Studies",
+      "location": "Germany (remote)",
+      "description": "Bachelor's degree in Cybersecurity (ongoing). Focus on secure IT infrastructures, networks, cryptography, and legal foundations.",
+      "date": "Oct 2022 – Present"
+    },
+    "training": {
+      "title": "IT Specialist Training for System Integration",
+      "location": "Detmold, Germany",
+      "description": "Vocational training as an IT specialist for system integration.",
+      "date": "Oct 2017 – 2020"
+    }
+  },
+  "skills": {
+    "title": "My skills"
+  },
+  "contact": {
+    "title": "Contact me",
+    "description": "Please contact me directly at",
+    "or": "or through this form.",
+    "form": {
+      "email": "Your email",
+      "message": "Your message",
+      "submit": "Submit",
+      "sending": "Sending..."
+    },
+    "success": "Email sent successfully!",
+    "error": "Failed to send email. Please try again."
+  }
+}

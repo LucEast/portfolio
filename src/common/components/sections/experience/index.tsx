@@ -9,10 +9,13 @@ import 'react-vertical-timeline-component/style.min.css';
 import { useTheme } from 'next-themes';
 import { useHasMounted, useSectionInView } from '@/common/lib/hooks';
 import SectionHeading from '@/common/components/shared/section-heading';
-import { experiencesData } from '@/common/lib/data';
 import SectionDivider from '@/common/components/shared/section-divider';
+import { useTranslations } from 'next-intl';
+import { getExperiencesData } from '@/common/lib/data-i18n';
 
 export default function Experience() {
+  const t = useTranslations();
+  const experiencesData = getExperiencesData(t);
   const { ref } = useSectionInView('experience');
   const { theme } = useTheme();
   const ihasMounted = useHasMounted();
@@ -21,9 +24,9 @@ export default function Experience() {
     <section
       id="experience"
       ref={ref}
-      className="w-full scroll-mt-20 dark:bg-darkBg dark:text-white"
+      className="w-full px-4 sm:px-6 scroll-mt-20 dark:bg-darkBg dark:text-white"
     >
-      <SectionHeading>My experience</SectionHeading>
+      <SectionHeading>{t('experience.title')}</SectionHeading>
       <VerticalTimeline animate={false} lineColor={theme === 'light' ? '#9ca3af' : '#e5e7eb'}>
         {ihasMounted &&
           experiencesData.map((item, index) => (
@@ -35,8 +38,8 @@ export default function Experience() {
                   boxShadow: 'none',
                   border: '1px solid rgba(0, 0, 0, 0.05)',
                   textAlign: 'left',
-                  padding: '1.3rem 2rem',
-                  borderRadius: '1rem',
+                  padding: '1rem 1.5rem',
+                  borderRadius: '0.75rem',
                 }}
                 contentArrowStyle={{
                   borderRight: '0.4rem solid #9ca3af',
@@ -48,14 +51,14 @@ export default function Experience() {
                     theme === 'light' ? '#f3f4f6' : '#1a1f2b',
                   boxShadow:
                     theme === 'light'
-                      ? '0 0 0 4px var(--icon-shadow)' // z. B. Tailwind "indigo-500"
-                      : '0 0 0 4px var(--icon-shadow)', // dein Darkmode Primary
-                  fontSize: '1.5rem',
+                      ? '0 0 0 4px var(--icon-shadow)'
+                      : '0 0 0 4px var(--icon-shadow)',
+                  fontSize: '1.2rem',
                 }}
               >
-                <h3 className="font-semibold">{item.title}</h3>
-                <p className="!mt-0 font-normal">{item.location}</p>
-                <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+                <h3 className="text-base sm:text-lg font-semibold">{item.title}</h3>
+                <p className="!mt-0 text-sm sm:text-base font-normal">{item.location}</p>
+                <p className="!mt-1 text-sm sm:text-base !font-normal text-gray-700 dark:text-white/75">
                   {item.description}
                 </p>
               </VerticalTimelineElement>

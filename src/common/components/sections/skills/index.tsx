@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionHeading from "@/common/components/shared/section-heading";
 import SectionDivider from "@/common/components/shared/section-divider";
+import { useTranslations } from "next-intl";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -23,19 +24,20 @@ const fadeInAnimationVariants = {
 };
 
 export default function Skills() {
+  const t = useTranslations("skills");
   const { ref } = useSectionInView("skills");
 
   return (
     <section
       id="skills"
       ref={ref}
-      className="flex w-full flex-col items-center justify-center py-24 pb-[150px] text-center dark:bg-darkBg dark:text-white sm:pb-40"
+      className="flex w-full flex-col items-center justify-center px-4 sm:px-6 py-16 sm:py-24 pb-[100px] sm:pb-[150px] text-center dark:bg-darkBg dark:text-white"
     >
-      <SectionHeading>My skills</SectionHeading>
-      <ul className="my-26 mb-[150px] flex max-w-[53rem] flex-wrap items-center justify-center gap-2 text-lg text-gray-800">
+      <SectionHeading>{t('title')}</SectionHeading>
+      <ul className="my-8 sm:my-26 mb-[80px] sm:mb-[150px] flex max-w-[53rem] flex-wrap items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg text-gray-800">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="borderBlack flex items-center justify-center rounded-xl bg-gray-200 px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            className="borderBlack flex items-center justify-center rounded-lg sm:rounded-xl bg-gray-200 px-3 sm:px-4 py-2 sm:py-3 dark:bg-white/10 dark:text-white/80"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -48,11 +50,11 @@ export default function Skills() {
             <Image
               src={skill[1]}
               alt={skill[0]}
-              width={24}
-              height={24}
-              className="mr-2 inline h-6 w-6"
+              width={20}
+              height={20}
+              className="mr-2 inline h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6"
             />
-            {skill[0]}
+            <span className="text-xs sm:text-sm md:text-base">{skill[0]}</span>
           </motion.li>
         ))}
       </ul>

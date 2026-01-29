@@ -29,9 +29,9 @@ export default function Hero() {
           <div className="absolute top-1/4 left-1/3 w-[400px] h-[400px] rounded-full bg-blue-500 opacity-30 blur-[100px] animate-blob animation-delay-4000" />
         </div>
 
-        <div className="container z-10 flex flex-col items-center justify-center text-center tracking-wide text-black dark:text-white">
+        <div className="container z-10 flex flex-col items-center justify-center px-4 text-center tracking-wide text-black dark:text-white">
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -41,7 +41,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="mt-4 text-lg sm:text-xl text-gray-500 dark:text-gray-400"
+            className="mt-4 px-4 text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -50,7 +50,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="mt-6 mb-10 w-full px-4 text-center text-2xl font-bold text-primary min-h-[56px]"
+            className="mt-6 mb-10 w-full px-4 text-center text-lg sm:text-xl md:text-2xl font-bold text-primary min-h-[56px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
@@ -59,16 +59,16 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            className="z-10 flex flex-wrap justify-center gap-4 px-4 text-sm font-medium lg:text-lg"
+            className="z-10 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 px-4 text-sm font-medium lg:text-base"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4 }}
           >
             <a
-              className="group flex w-64 cursor-pointer items-center justify-center gap-2 rounded-full 
+              className="group flex w-full sm:w-64 md:w-auto cursor-pointer items-center justify-center gap-2 rounded-full 
                         bg-zinc-900 text-white hover:bg-lightPrimary 
                         dark:bg-white dark:text-black dark:hover:bg-darkPrimary
-                        px-7 py-3 outline-none transition sm:w-auto"
+                        px-6 py-3 outline-none transition"
               onClick={(e) => {
                 smoothScrollTo({ e, id: "contact" });
                 setActiveSection("contact");
@@ -79,14 +79,14 @@ export default function Hero() {
             </a>
 
             <a
-              className="borderBlack group flex w-64 cursor-pointer items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-black outline-none transition hover:bg-gray-100 dark:bg-white/20 dark:text-white dark:hover:bg-white/50 sm:w-auto"
+              className="borderBlack group flex w-full sm:w-64 md:w-auto cursor-pointer items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-black outline-none transition hover:bg-gray-100 dark:bg-white/20 dark:text-white dark:hover:bg-white/50"
               href="/CV_Lucas_Ostmann.pdf"
               download
             >
               <span>Download CV</span>
             </a>
 
-            <div className="flex gap-2">
+            <div className="flex gap-3 justify-center w-full sm:w-auto">
               <a
                 className="borderBlack flex h-[50px] w-[50px] cursor-pointer items-center justify-center gap-2 rounded-full bg-white p-2 text-black transition hover:bg-gray-100 hover:text-gray-950 dark:bg-white/20 dark:text-white/60 dark:hover:bg-white/50"
                 href="https://www.linkedin.com/in/luceast/"
@@ -120,7 +120,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-6 animate-bounce text-sm text-gray-500 dark:text-gray-400">
+        <div className="absolute bottom-6 animate-bounce text-xs sm:text-sm text-gray-500 dark:text-gray-400">
           ↓ Scroll down
         </div>
       </section>

@@ -10,8 +10,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export default function About() {
+  const t = useTranslations('about');
   const { ref } = useSectionInView('about', 0.4);
   const divRef = useRef<HTMLDivElement>(null);
 
@@ -24,7 +26,7 @@ export default function About() {
 
   return (
     <motion.section
-      className="z-50 flex h-[1000px] w-full flex-col items-center justify-start leading-8 dark:bg-darkBg dark:text-white md:scroll-mt-4 lg:h-[1100px] lg:scroll-mt-24"
+      className="z-50 flex min-h-[800px] sm:h-[1000px] w-full flex-col items-center justify-start leading-8 dark:bg-darkBg dark:text-white md:scroll-mt-4 lg:h-[1100px] lg:scroll-mt-24"
       ref={ref}
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
@@ -32,9 +34,9 @@ export default function About() {
       id="about"
     >
       <div className="flex w-full flex-col items-center pt-8">
-        <SectionHeading>About Me</SectionHeading>
+        <SectionHeading>{t('title')}</SectionHeading>
         <motion.div
-          className="w-full overflow-hidden px-4 py-12 sm:w-[60%] sm:text-center lg:h-[700px] lg:w-[1040px] xl:w-[1180px]"
+          className="w-full overflow-hidden px-4 py-8 sm:py-12 sm:w-[90%] md:w-[80%] sm:text-center lg:h-[700px] lg:w-[1040px] xl:w-[1180px]"
           ref={divRef}
           style={{
             scale: scaleProgess,
@@ -44,27 +46,21 @@ export default function About() {
           }}
         >
           <div className="antialiased group relative w-full">
-            <div className="text-md relative z-40 flex flex-col gap-3 font-semibold tracking-wide text-primary lg:absolute lg:right-0 lg:top-[27%] lg:block lg:max-w-[580px] lg:text-start lg:text-lg xl:top-1/3 xl:h-[442px] xl:max-w-[650px]">
-              <div className="flex h-full flex-col justify-center gap-6">
-                <span>
-                  I&apos;m a DevSecOps Engineer with expertise in Kubernetes,
-                  Ansible & Terraform and many more. 
+            <div className="text-sm sm:text-md relative z-40 flex flex-col gap-4 sm:gap-6 font-semibold tracking-wide text-primary lg:absolute lg:right-0 lg:top-[27%] lg:block lg:max-w-[580px] lg:text-start lg:text-lg xl:top-1/3 xl:h-[442px] xl:max-w-[650px]">
+              <div className="flex h-full flex-col justify-center gap-4 sm:gap-6">
+                <span className="text-base sm:text-lg">
+                  {t('content')}
                 </span>
-                <span>
-                  Seeking for opportunities where I can leverage
-                  my skills to create meaningful connections between products
-                  and users.
-                </span>
-                <p className="flex flex-col items-start sm:items-center lg:items-start">
-                  <span>So if you are interested,</span>
+                <p className="flex flex-col items-start sm:items-center lg:items-start gap-2">
+                  <span className="text-base sm:text-lg">So if you are interested,</span>
                   <Link
                     href={'contact'}
                     onClick={(e) => {
                       smoothScrollTo({ e, id: 'contact' });
                     }}
-                    className="w-52 lg:w-40"
+                    className="w-full sm:w-52 lg:w-40"
                   >
-                    <span className="bg-lightPrimary text-2xl font-bold uppercase dark:bg-darkPrimary lg:normal-case">
+                    <span className="bg-lightPrimary text-xl sm:text-2xl font-bold uppercase dark:bg-darkPrimary lg:normal-case inline-block px-2">
                       Contact me!
                     </span>
                   </Link>

@@ -2,12 +2,16 @@
 
 import React from "react";
 import { useSectionInView } from "@/common/lib/hooks";
-import { projectsData } from "@/common/lib/data";
+import { getProjectsData } from "@/common/lib/data-i18n";
 import Project from "./_components/project";
 import SectionHeading from "@/common/components/shared/section-heading";
 import SectionDivider from "@/common/components/shared/section-divider";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function Projects() {
+  const t = useTranslations("projects");
+  const locale = useLocale();
+  const projectsData = getProjectsData(locale);
   const { ref } = useSectionInView("projects", 0.25);
 
   return (
@@ -16,7 +20,7 @@ export default function Projects() {
       id="projects"
       ref={ref}
     >
-      <SectionHeading>Projects</SectionHeading>
+      <SectionHeading>{t('title')}</SectionHeading>
       <div className="my-24">
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>

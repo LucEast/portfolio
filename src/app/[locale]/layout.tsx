@@ -1,0 +1,40 @@
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { locales } from '@/i18n/request';
+import ActiveSectionContextProvider from '@/common/stores/active-section';
+import Header from '@/common/components/shared/header';
+import Footer from '@/common/components/shared/footer';
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  // Ensure that the incoming `locale` is valid
+  if (!locales.includes(locale as any)) {
+    notFound();
+  }
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
+  return (
+    <NextIntlClientProvider messages={messages}>
+      <ActiveSectionContextProvider>
+        <Header />
+        {children}
+        <Footer />
+      </ActiveSectionContextProvider>
+    </NextIntlClientProvider>
+  );
+}

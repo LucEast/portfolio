@@ -5,30 +5,32 @@ import { smoothScrollTo } from "@/common/lib/utils";
 import { useActiveSectionContext } from "@/common/stores/active-section";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Header() {
+  const t = useTranslations("nav");
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
 
   return (
     <header className="relative z-[99]">
       <motion.div
-        className="fixed left-1/2 top-0 h-[4.5rem] w-full rounded-none border border-lightPrimary dark:border-darkPrimary border-opacity-40 bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] md:w-[41rem] md:rounded-full"
+        className="fixed left-1/2 top-0 h-[4.5rem] w-full rounded-none border border-lightPrimary dark:border-darkPrimary border-opacity-40 bg-white/80 dark:bg-darkBg/80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] md:w-[42rem] md:rounded-full"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>
 
       <nav className="fixed left-1/2 top-[0.15rem] flex h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-        <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-2 text-[0.9rem] font-medium transition-colors sm:w-[initial] sm:flex-nowrap sm:gap-5">
+        <ul className="flex w-full max-w-[calc(100vw-4rem)] px-2 flex-wrap items-center justify-center gap-x-1 gap-y-1 text-[0.75rem] sm:text-[0.85rem] font-medium transition-colors sm:w-[initial] sm:flex-nowrap sm:gap-4 md:gap-5">
           {links.map((link) => (
             <motion.li
-              className="relative flex h-3/4 items-center justify-center text-black dark:text-white"
+              className="relative flex items-center justify-center text-black dark:text-white"
               key={link.id}
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
               <Link
-                className="flex w-full items-center justify-center px-3 py-3 uppercase transition"
+                className="flex items-center justify-center px-2 sm:px-3 py-2 sm:py-3 uppercase transition whitespace-nowrap"
                 href={link.id}
                 onClick={(e) => {
                   smoothScrollTo({ e, id: link.id });
@@ -36,7 +38,7 @@ export default function Header() {
                   setTimeOfLastClick(Date.now());
                 }}
               >
-                {link.name}
+                {t(link.id as any)}
 
                 {link.id === activeSection && (
                   <motion.span

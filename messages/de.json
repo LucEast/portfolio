@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Start",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "skills": "Fähigkeiten",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "greeting": "Hallo, ich bin",
+    "name": "Lucas Ostmann",
+    "title": "Kubernetes Administrator",
+    "description": "Ich spezialisiere mich auf Kubernetes, DevOps und Cloud-Infrastruktur. Derzeit arbeite ich bei OWL-IT in Ostwestfalen-Lippe, Deutschland."
+  },
+  "about": {
+    "title": "Über mich",
+    "content": "Nach meiner Ausbildung zum Fachinformatiker für Systemintegration habe ich als System-Administrator in einem kommunalen Rechenzentrum gearbeitet. Seit 2023 bin ich bei OWL-IT als Kubernetes Administrator und stellvertretender Teamleiter (Linux) tätig. Ich kümmere mich um Planung, Aufbau und Betrieb von Kubernetes-Clustern sowie die Entwicklung einer internen Cloud-Management-Konsole. Meine Schwerpunkte liegen in DevSecOps, Infrastructure as Code, Security und Automatisierung."
+  },
+  "projects": {
+    "title": "Meine Projekte"
+  },
+  "experience": {
+    "title": "Meine Erfahrung",
+    "owlit": {
+      "title": "OWL-IT",
+      "location": "Ostwestfalen-Lippe, Deutschland",
+      "description": "Kubernetes Administrator & Stellvertretende Teamleitung (Linux). Planung, Aufbau und Betrieb von Kubernetes-Clustern sowie Entwicklung einer internen Cloud-Management-Konsole. Fokus auf DevSecOps, IaC, Security und Automatisierung.",
+      "date": "Aug 2023 – Heute"
+    },
+    "krz": {
+      "title": "Kommunales Rechenzentrum",
+      "location": "Ostwestfalen-Lippe, Deutschland",
+      "description": "System-Administrator. Betrieb und Pflege von Linux-Systemen, Aufbau und Pflege von Netzwerken und Mobile Device Management.",
+      "date": "Jul 2020 – Aug 2023"
+    },
+    "study": {
+      "title": "Berufsbegleitendes Studium",
+      "location": "Deutschland (remote)",
+      "description": "Bachelor-Studium in Cybersecurity (laufend). Fokus auf sichere IT-Infrastrukturen, Netzwerke, Kryptographie und rechtliche Grundlagen.",
+      "date": "Okt 2022 – Heute"
+    },
+    "training": {
+      "title": "Ausbildung zum Fachinformatiker für Systemintegration",
+      "location": "Detmold, Deutschland",
+      "description": "Ausbildung zum Fachinformatiker für Systemintegration.",
+      "date": "Okt 2017 – 2020"
+    }
+  },
+  "skills": {
+    "title": "Meine Fähigkeiten"
+  },
+  "contact": {
+    "title": "Kontaktiere mich",
+    "description": "Du kannst mich direkt kontaktieren unter",
+    "or": "oder über dieses Formular.",
+    "form": {
+      "email": "Deine E-Mail",
+      "message": "Deine Nachricht",
+      "submit": "Absenden",
+      "sending": "Wird gesendet..."
+    },
+    "success": "E-Mail erfolgreich gesendet!",
+    "error": "Fehler beim Senden der E-Mail. Bitte versuche es erneut."
+  }
+}
