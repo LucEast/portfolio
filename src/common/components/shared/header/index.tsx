@@ -38,44 +38,47 @@ export default function Header() {
       {/* Desktop Navigation */}
       <div className="hidden sm:block">
         <motion.div
-          className="fixed left-1/2 top-6 h-[3.25rem] rounded-full border border-lightPrimary dark:border-darkPrimary border-opacity-40 bg-white/80 dark:bg-darkBg/80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]"
+          className="fixed left-1/2 top-6 h-[3.25rem] px-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] bg-white/80 dark:bg-gray-950/80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]"
           initial={{ y: -100, x: "-50%", opacity: 0 }}
           animate={{ y: 0, x: "-50%", opacity: 1 }}
-          style={{ width: "fit-content", minWidth: "36rem", maxWidth: "50rem" }}
-        ></motion.div>
-
-        <nav className="fixed left-1/2 top-[1.7rem] -translate-x-1/2">
-          <ul className="flex items-center justify-center gap-1 text-[0.85rem] font-medium">
-            {links.map((link) => (
-              <motion.li
-                className="relative flex items-center justify-center text-black dark:text-white"
-                key={link.id}
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-              >
-                <Link
-                  className="flex items-center justify-center px-4 py-3 uppercase transition whitespace-nowrap hover:text-gray-600 dark:hover:text-gray-300"
-                  href={link.id}
-                  onClick={(e) => handleLinkClick(e, link.id)}
+        >
+          <nav className="h-full flex items-center">
+            <ul className="flex items-center justify-center gap-0.5 text-[0.85rem] font-medium">
+              {links.map((link) => (
+                <motion.li
+                  className="relative"
+                  key={link.id}
+                  initial={{ y: -100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
                 >
-                  {t(link.id as any)}
+                  <Link
+                    className={`relative z-10 flex items-center justify-center px-4 py-2 rounded-full uppercase transition whitespace-nowrap ${
+                      link.id === activeSection
+                        ? "text-white dark:text-white"
+                        : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                    }`}
+                    href={link.id}
+                    onClick={(e) => handleLinkClick(e, link.id)}
+                  >
+                    {t(link.id as any)}
+                  </Link>
 
                   {link.id === activeSection && (
                     <motion.span
-                      className="absolute inset-0 -z-10 rounded-full bg-lightPrimary dark:bg-darkPrimary"
+                      className="absolute inset-0 rounded-full bg-gray-900 dark:bg-gray-100"
                       layoutId="activeSection"
                       transition={{
                         type: "spring",
-                        stiffness: 300,
+                        stiffness: 380,
                         damping: 30,
                       }}
                     ></motion.span>
                   )}
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </nav>
+                </motion.li>
+              ))}
+            </ul>
+          </nav>
+        </motion.div>
       </div>
 
       {/* Mobile Navigation */}
