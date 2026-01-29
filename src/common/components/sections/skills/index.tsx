@@ -31,7 +31,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="flex w-full flex-col items-center justify-center px-4 sm:px-6 py-16 sm:py-24 pb-[100px] sm:pb-[150px] text-center dark:bg-darkBg dark:text-white"
+      className="flex w-full flex-col items-center justify-center px-4 sm:px-6 pt-16 sm:pt-24 py-16 sm:py-24 pb-[100px] sm:pb-[150px] scroll-mt-16 sm:scroll-mt-0 text-center dark:bg-darkBg dark:text-white"
     >
       <SectionHeading>{t('title')}</SectionHeading>
       <ul className="my-8 sm:my-26 mb-[80px] sm:mb-[150px] flex max-w-[53rem] flex-wrap items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg text-gray-800">

@@ -24,7 +24,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={ref}
-      className="w-full px-4 sm:px-6 scroll-mt-20 dark:bg-darkBg dark:text-white"
+      className="w-full px-4 sm:px-6 pt-16 sm:pt-0 scroll-mt-16 sm:scroll-mt-20 dark:bg-darkBg dark:text-white"
     >
       <SectionHeading>{t('experience.title')}</SectionHeading>
       <VerticalTimeline animate={false} lineColor={theme === 'light' ? '#9ca3af' : '#e5e7eb'}>

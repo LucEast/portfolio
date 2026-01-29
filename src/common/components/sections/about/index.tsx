@@ -26,7 +26,7 @@ export default function About() {
 
   return (
     <motion.section
-      className="z-50 flex min-h-[800px] sm:h-[1000px] w-full flex-col items-center justify-start leading-8 dark:bg-darkBg dark:text-white md:scroll-mt-4 lg:h-[1100px] lg:scroll-mt-24"
+      className="z-50 flex min-h-[800px] sm:h-[1000px] w-full flex-col items-center justify-start leading-8 pt-16 sm:pt-0 dark:bg-darkBg dark:text-white scroll-mt-16 sm:scroll-mt-4 lg:h-[1100px] lg:scroll-mt-24"
       ref={ref}
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}

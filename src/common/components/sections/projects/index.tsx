@@ -16,7 +16,7 @@ export default function Projects() {
 
   return (
     <section
-      className="flex min-h-screen w-full scroll-mt-28 flex-col items-center justify-center dark:bg-darkBg dark:text-white"
+      className="flex min-h-screen w-full pt-16 sm:pt-0 scroll-mt-16 sm:scroll-mt-28 flex-col items-center justify-center dark:bg-darkBg dark:text-white"
       id="projects"
       ref={ref}
     >

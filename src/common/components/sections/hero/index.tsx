@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <>
       <section
-        className="relative flex h-screen w-full scroll-mt-36 flex-col items-center justify-center bg-lightBg dark:bg-darkBg"
+        className="relative flex h-screen w-full pt-16 sm:pt-0 scroll-mt-36 flex-col items-center justify-center bg-lightBg dark:bg-darkBg"
         id="home"
         ref={ref}
       >
