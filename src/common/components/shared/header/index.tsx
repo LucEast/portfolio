@@ -38,24 +38,30 @@ export default function Header() {
       {/* Desktop Navigation */}
       <div className="hidden sm:block">
         <motion.div
-          className="fixed left-1/2 top-6 h-[3.25rem] px-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] bg-white/80 dark:bg-gray-950/80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]"
+          className="fixed left-1/2 top-6 h-[3.25rem] px-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] bg-white/90 dark:bg-gray-950/90 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem]"
           initial={{ y: -100, x: "-50%", opacity: 0 }}
           animate={{ y: 0, x: "-50%", opacity: 1 }}
         >
           <nav className="h-full flex items-center">
             <ul className="flex items-center justify-center gap-0.5 text-[0.85rem] font-medium">
-              {links.map((link) => (
+              {links.map((link, index) => (
                 <motion.li
                   className="relative"
                   key={link.id}
                   initial={{ y: -100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    delay: index * 0.08,
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20
+                  }}
                 >
                   <Link
-                    className={`relative z-10 flex items-center justify-center px-4 py-2 rounded-full uppercase transition whitespace-nowrap ${
+                    className={`relative z-10 flex items-center justify-center px-4 py-2 rounded-full uppercase transition-colors whitespace-nowrap ${
                       link.id === activeSection
-                        ? "text-white dark:text-white"
-                        : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                        ? "text-white dark:text-gray-900"
+                        : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                     }`}
                     href={link.id}
                     onClick={(e) => handleLinkClick(e, link.id)}
@@ -65,12 +71,12 @@ export default function Header() {
 
                   {link.id === activeSection && (
                     <motion.span
-                      className="absolute inset-0 rounded-full bg-gray-900 dark:bg-gray-100"
+                      className="absolute inset-0 rounded-full bg-gray-800 dark:bg-gray-200"
                       layoutId="activeSection"
                       transition={{
                         type: "spring",
-                        stiffness: 380,
-                        damping: 30,
+                        bounce: 0.2,
+                        duration: 0.6,
                       }}
                     ></motion.span>
                   )}
