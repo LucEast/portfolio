@@ -36,32 +36,64 @@ export const experiencesData = [
   {
     title: 'OWL-IT',
     location: 'Ostwestfalen-Lippe, Germany',
-    description:
-      'Kubernetes Administrator & Stellvertretende Teamleitung (Linux). Planung, Aufbau und Betrieb von Kubernetes-Clustern sowie Entwicklung einer internen Cloud-Management-Konsole. Fokus auf DevSecOps, IaC, Security und Automatisierung.',
+    description: {
+      de: 'Kubernetes Administrator & stellvertretende Teamleitung (Linux). Verantwortlich für Planung, Aufbau und Betrieb der Kubernetes-Plattform sowie für Security und Automatisierung darum herum.',
+      en: 'Kubernetes administrator & deputy team lead (Linux). Responsible for planning, building and operating the Kubernetes platform, plus the security and automation around it.',
+    },
+    highlights: {
+      de: [
+        'Betreibe ~20 produktive Kubernetes-Cluster (HA, min. 3 Control-Plane-Nodes, 6–15 Nodes je Cluster)',
+        'Stellvertretende Teamleitung im Linux-Team',
+        'Entwicklung der "OWL-IT Cloud Console" – ein Self-Service-Portal, das Delivery standardisiert und Härtung/Security-Scans (u.a. Kyverno, Trivy) für Kunden automatisch durchsetzt; produktiv im Einsatz bei externen Kunden, noch vor dem internen Rollout',
+        'Delivery über Release-Pipelines, IaC und GitOps (ArgoCD App-of-Apps)',
+      ],
+      en: [
+        'Operate ~20 production Kubernetes clusters (HA, min. 3 control-plane nodes, 6–15 nodes each)',
+        'Deputy team lead within the Linux team',
+        'Built the "OWL-IT Cloud Console" – a self-service portal that standardizes delivery and automatically enforces hardening/security scanning (Kyverno, Trivy) for customers; live in production for external customers ahead of the internal rollout',
+        'Delivery via release pipelines, IaC and GitOps (ArgoCD app-of-apps)',
+      ],
+    },
     icon: React.createElement(BriefcaseBusinessIcon),
     date: 'Aug 2023 – Present',
   },
   {
     title: 'Kommunales Rechenzentrum',
     location: 'Ostwestfalen-Lippe, Germany',
-    description:
-      'System-Administrator. Betrieb und Pflege von Linux-Systemen, aufbau und pflege von Netzwerken und Mobile Device Management.',
+    description: {
+      de: 'System-Administrator. Betrieb und Pflege von Linux-Systemen, Aufbau und Pflege von Netzwerken und Mobile Device Management.',
+      en: 'System administrator. Operated and maintained Linux systems, built and maintained networks, and handled mobile device management.',
+    },
+    highlights: {
+      de: [
+        'Rollout und Betrieb von Schulserversystemen an über 50 Schulen im Verbandsgebiet',
+        '2nd/3rd-Level-Support für Lehrkräfte und Medienbeauftragte',
+      ],
+      en: [
+        'Rolled out and operated school server systems across 50+ schools in the district',
+        '2nd/3rd-level support for teachers and media coordinators',
+      ],
+    },
     icon: React.createElement(BriefcaseBusinessIcon),
     date: 'Jul 2020 – Aug 2023',
   },
   {
     title: 'Berufsbegleitendes Studium',
     location: 'Germany (remote)',
-    description:
-      "Bachelor's degree in Cybersecurity (laufend). Fokus auf sichere IT-Infrastrukturen, Netzwerke, Kryptographie und rechtliche Grundlagen.",
+    description: {
+      de: 'B.Sc. Cyber-Security (laufend). Fokus auf sichere IT-Infrastrukturen, Netzwerke, Kryptographie und rechtliche Grundlagen.',
+      en: "Bachelor's degree in Cybersecurity (ongoing). Focus on secure IT infrastructure, networks, cryptography and legal fundamentals.",
+    },
     icon: React.createElement(BookIcon),
     date: 'Okt 2022 – Present',
   },
   {
     title: 'Ausbildung zum Fachinformatiker für Systemintegration',
     location: 'Detmold, Germany',
-    description:
-      "Ausbildung zum Fachinformatiker für Systemintegration.",
+    description: {
+      de: 'Ausbildung zum Fachinformatiker für Systemintegration.',
+      en: 'Vocational training as an IT specialist for system integration.',
+    },
     icon: React.createElement(BookIcon),
     date: 'Okt 2017 – 2020',
   },
@@ -78,6 +110,7 @@ export const projectsData = [
     tags: ['Kubernetes', 'Ansible', `RKE2`],
     imageUrl: rkeasyImg,
     link: 'https://github.com/LucEast/RKEasy',
+    internalLink: '/work/rkeasy',
   },
   // {
   //   title: 'Demo Automation of accounting documents processing',
@@ -117,6 +150,7 @@ export const projectsData = [
     ],
     imageUrl: portfolioImg,
     link: 'https://github.com/LucEast/portfolio',
+    internalLink: undefined as string | undefined,
   },
   {
     title: 'Current View',
@@ -127,6 +161,7 @@ export const projectsData = [
     ],
     imageUrl: currentviewImg,
     link: 'https://github.com/LucEast/obsidian-current-view',
+    internalLink: '/work/current-view',
   },
 
   // {

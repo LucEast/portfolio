@@ -5,10 +5,13 @@ import { smoothScrollTo } from "@/common/lib/utils";
 import { useActiveSectionContext } from "@/common/stores/active-section";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
     <header className="relative z-[99]">
@@ -29,11 +32,13 @@ export default function Header() {
             >
               <Link
                 className="flex w-full items-center justify-center px-3 py-3 uppercase transition"
-                href={link.id}
+                href={`/#${link.id}`}
                 onClick={(e) => {
-                  smoothScrollTo({ e, id: link.id });
-                  setActiveSection(link.id);
-                  setTimeOfLastClick(Date.now());
+                  if (isHome) {
+                    smoothScrollTo({ e, id: link.id });
+                    setActiveSection(link.id);
+                    setTimeOfLastClick(Date.now());
+                  }
                 }}
               >
                 {link.name}

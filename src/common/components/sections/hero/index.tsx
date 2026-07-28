@@ -5,14 +5,40 @@ import SectionDivider from "@/common/components/shared/section-divider";
 import TextAnimation from "./_components/text-animation";
 import { useSectionInView } from "@/common/lib/hooks";
 import { useActiveSectionContext } from "@/common/stores/active-section";
+import { useLocale } from "@/common/stores/locale";
 import { smoothScrollTo } from "@/common/lib/utils";
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
 import Image from "next/image";
 
+const content = {
+  de: {
+    greeting: "Hey, ich bin Lucas 👋",
+    role: "Platform & DevSecOps Engineer",
+    tagline:
+      "Ich baue sichere, automatisierte Plattformen und Werkzeuge – von Kubernetes und Infrastructure as Code bis zu Open-Source-Produkten für bessere Workflows.",
+    favoriteTools: "Nebenbei: Code, Git & Kaffee ☕",
+    contact: "Kontakt aufnehmen",
+    downloadCV: "CV herunterladen",
+    scroll: "↓ Runterscrollen",
+  },
+  en: {
+    greeting: "Hey, I'm Lucas 👋",
+    role: "Platform & DevSecOps Engineer",
+    tagline:
+      "I build secure, automated platforms and tools — from Kubernetes and Infrastructure as Code to open-source products that make workflows better.",
+    favoriteTools: "Also: code, Git & coffee ☕",
+    contact: "Contact me",
+    downloadCV: "Download CV",
+    scroll: "↓ Scroll down",
+  },
+} as const;
+
 export default function Hero() {
   const { ref } = useSectionInView("home");
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const { locale } = useLocale();
+  const t = content[locale];
 
   return (
     <>
@@ -36,17 +62,17 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            Hey!<br />
-            I'm Lucas 👋
+            {t.greeting}<br />
+            {t.role}
           </motion.h1>
 
           <motion.p
-            className="mt-4 text-lg sm:text-xl text-gray-500 dark:text-gray-400"
+            className="mt-4 max-w-2xl text-lg sm:text-xl text-gray-500 dark:text-gray-400"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            Kubernetes · DevSecOps · IaC & Automation Enthusiast
+            {t.tagline}
           </motion.p>
 
           <motion.div
@@ -55,7 +81,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            <TextAnimation delay={1.2} baseText={`My favorite tools are code, Git & coffee ☕`} />
+            <TextAnimation key={locale} delay={1.2} baseText={t.favoriteTools} />
           </motion.div>
 
           <motion.div
@@ -75,7 +101,7 @@ export default function Hero() {
                 setTimeOfLastClick(Date.now());
               }}
             >
-              <span>Contact me here</span>
+              <span>{t.contact}</span>
             </a>
 
             <a
@@ -83,7 +109,7 @@ export default function Hero() {
               href="/CV_Lucas_Ostmann.pdf"
               download
             >
-              <span>Download CV</span>
+              <span>{t.downloadCV}</span>
             </a>
 
             <div className="flex gap-2">
@@ -121,7 +147,7 @@ export default function Hero() {
         </div>
 
         <div className="absolute bottom-6 animate-bounce text-sm text-gray-500 dark:text-gray-400">
-          ↓ Scroll down
+          {t.scroll}
         </div>
       </section>
 
