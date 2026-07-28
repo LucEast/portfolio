@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/LucEast/portfolio/compare/v1.1.0...v1.2.0) (2026-07-28)
+
+
+### Features
+
+* reposition portfolio, add case studies, and patch critical Next.js CVE ([24db568](https://github.com/LucEast/portfolio/commit/24db568e7d2033e6a3fbea4feab08a3ada9ab621))
+
 # [1.1.0](https://github.com/LucEast/portfolio/compare/v1.0.12...v1.1.0) (2025-08-23)
 
 
