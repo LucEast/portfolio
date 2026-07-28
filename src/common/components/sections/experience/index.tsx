@@ -11,11 +11,18 @@ import { useHasMounted, useSectionInView } from '@/common/lib/hooks';
 import SectionHeading from '@/common/components/shared/section-heading';
 import { experiencesData } from '@/common/lib/data';
 import SectionDivider from '@/common/components/shared/section-divider';
+import { useLocale } from '@/common/stores/locale';
+
+const sectionHeading = {
+  de: 'Erfahrung',
+  en: 'My experience',
+} as const;
 
 export default function Experience() {
   const { ref } = useSectionInView('experience');
   const { theme } = useTheme();
   const ihasMounted = useHasMounted();
+  const { locale } = useLocale();
 
   return (
     <section
@@ -23,7 +30,7 @@ export default function Experience() {
       ref={ref}
       className="w-full scroll-mt-20 dark:bg-darkBg dark:text-white"
     >
-      <SectionHeading>My experience</SectionHeading>
+      <SectionHeading>{sectionHeading[locale]}</SectionHeading>
       <VerticalTimeline animate={false} lineColor={theme === 'light' ? '#9ca3af' : '#e5e7eb'}>
         {ihasMounted &&
           experiencesData.map((item, index) => (
@@ -56,8 +63,15 @@ export default function Experience() {
                 <h3 className="font-semibold">{item.title}</h3>
                 <p className="!mt-0 font-normal">{item.location}</p>
                 <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                  {item.description}
+                  {item.description[locale]}
                 </p>
+                {'highlights' in item && item.highlights && (
+                  <ul className="!mt-3 list-disc space-y-1 pl-4 text-sm !font-normal text-gray-700 dark:text-white/75">
+                    {item.highlights[locale].map((highlight, i) => (
+                      <li key={i}>{highlight}</li>
+                    ))}
+                  </ul>
+                )}
               </VerticalTimelineElement>
             </React.Fragment>
           ))}

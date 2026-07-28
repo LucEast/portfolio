@@ -14,6 +14,7 @@ export default function Project({
   tags,
   imageUrl,
   link,
+  internalLink,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -22,6 +23,9 @@ export default function Project({
   });
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
+  const primaryHref = internalLink ?? link;
+  const primaryTarget = internalLink ? undefined : '_blank';
 
   return (
     <motion.div
@@ -32,7 +36,7 @@ export default function Project({
       }}
       className="group mb-3 last:mb-0 sm:mb-8"
     >
-      <Link href={link} target="_blank">
+      <Link href={primaryHref} target={primaryTarget}>
         <section
           className={
             "relative max-w-[52rem] overflow-hidden rounded-xl border border-zinc-200 bg-lightPrimary/10 shadow-md hover:shadow-lg transition duration-300 hover:scale-[1.01] dark:border-white/10 dark:bg-darkPrimary/10 dark:hover:bg-white/10 sm:h-[20rem]"
@@ -61,6 +65,15 @@ export default function Project({
           />
         </section>
       </Link>
+      {internalLink && (
+        <Link
+          href={link}
+          target="_blank"
+          className="relative z-10 mt-2 inline-block text-xs uppercase tracking-wider text-gray-500 underline hover:text-gray-700 dark:text-white/60 dark:hover:text-white"
+        >
+          View source ↗
+        </Link>
+      )}
     </motion.div>
   );
 }
